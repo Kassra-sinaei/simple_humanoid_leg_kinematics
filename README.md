@@ -3,10 +3,10 @@ Inverse Kinematics for right leg of biped robot simulated with PyBullet and cont
 <br>
 <i>Dependencies</i>
 <br>
-<li>
-  <tu>pip3 install pybullet</tu>
-  <tu>pip3 install rospkg</tu>
-</li>
+<tu>
+  <li>pip3 install pybullet</li>
+  <li>pip3 install rospkg</li>
+</tu>
 
 <br>
 <br>
