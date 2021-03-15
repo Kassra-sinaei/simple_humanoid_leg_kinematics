@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="simple_robot_sim">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-5.71508578025251E-17 1.32441320679208E-17 -0.0456826662317587"
+        rpy="0 0 0" />
+      <mass
+        value="14.4794885972834" />
+      <inertia
+        ixx="0.0648800077797453"
+        ixy="-3.03569022552744E-34"
+        ixz="-6.71392917276313E-18"
+        iyy="0.135630007779745"
+        iyz="2.77410437036424E-18"
+        izz="0.176917311679859" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hip_yaw">
+    <inertial>
+      <origin
+        xyz="-3.2222E-08 -1.4956E-08 -0.059211"
+        rpy="0 0 0" />
+      <mass
+        value="15.656" />
+      <inertia
+        ixx="0.043284"
+        ixy="4.3317E-08"
+        ixz="-6.9253E-08"
+        iyy="0.045826"
+        iyz="-2.5036E-08"
+        izz="0.045465" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/hip_yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/hip_yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_hip_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.05"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="hip_yaw" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="hip_roll">
+    <inertial>
+      <origin
+        xyz="-1.64860302624167E-07 -3.30072248622815E-05 1.0604201905462E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.7790652518713" />
+      <inertia
+        ixx="0.000821464539248646"
+        ixy="-1.25242624365787E-08"
+        ixz="4.71021102020531E-10"
+        iyy="0.00411963430986972"
+        iyz="-1.16079001902219E-10"
+        izz="0.00407488020426554" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/hip_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.686274509803922 0.658823529411765 0.63921568627451 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/hip_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_yaw_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.16"
+      rpy="-0.00228729127535642 0 0" />
+    <parent
+      link="hip_yaw" />
+    <child
+      link="hip_roll" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="hip_pitch">
+    <inertial>
+      <origin
+        xyz="-6.53134388726974E-18 1.11727033874631E-16 -0.0618953633604963"
+        rpy="0 0 0" />
+      <mass
+        value="1.99740040941246" />
+      <inertia
+        ixx="0.0132585999375464"
+        ixy="-6.98250524258054E-19"
+        ixz="-1.54925319215135E-20"
+        iyy="0.00747257956597158"
+        iyz="3.25006541861475E-18"
+        izz="0.00607629008532851" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/hip_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.83921568627451 0.831372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/hip_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_roll_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="hip_roll" />
+    <child
+      link="hip_pitch" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="knee">
+    <inertial>
+      <origin
+        xyz="3.03876249032814E-17 -6.72747448027256E-17 0.0541101677070869"
+        rpy="0 0 0" />
+      <mass
+        value="0.494026554274615" />
+      <inertia
+        ixx="0.00481685931138169"
+        ixy="-2.77514771482045E-19"
+        ixz="-2.03816288616372E-19"
+        iyy="0.00168913137513351"
+        iyz="-2.98960278733405E-18"
+        izz="0.00353652366308356" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_knee_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.155"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="hip_pitch" />
+    <child
+      link="knee" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="ankle_pitch">
+    <inertial>
+      <origin
+        xyz="-6.93926311959122E-05 -2.24088141577644E-07 -4.39272968000282E-09"
+        rpy="0 0 0" />
+      <mass
+        value="1.15271055698668" />
+      <inertia
+        ixx="0.00403557796158524"
+        ixy="-1.06543249157933E-08"
+        ixz="2.86111863975445E-10"
+        iyy="0.000528725603234266"
+        iyz="-5.22961623656385E-10"
+        izz="0.00401232428959911" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/ankle_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/ankle_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_ankle_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.135"
+      rpy="3.14159265358979 -0.000733124532411505 -3.14159265358979" />
+    <parent
+      link="knee" />
+    <child
+      link="ankle_pitch" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="ankle_roll">
+    <inertial>
+      <origin
+        xyz="0.0243791696254881 4.41714151976124E-06 -0.06979194851214"
+        rpy="0 0 0" />
+      <mass
+        value="1.05410542174533" />
+      <inertia
+        ixx="0.00236241260201265"
+        ixy="-5.28348935555054E-08"
+        ixz="0.000519285519729944"
+        iyy="0.00508508918210817"
+        iyz="5.51729338527138E-08"
+        izz="0.00489919219357605" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/ankle_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_robot_sim/meshes/ankle_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_pitch_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0.00240191007762515 0 0" />
+    <parent
+      link="ankle_pitch" />
+    <child
+      link="ankle_roll" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
