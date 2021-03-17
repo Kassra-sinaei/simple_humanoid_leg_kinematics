@@ -8,11 +8,12 @@ import rospy
 #from simple_robot_sim.msg import joint_angle , joint_state
 from std_msgs.msg import Float64MultiArray
 from std_msgs.msg import MultiArrayDimension
-
+from simple_robot_sim.srv import *
 
 class robot_sim:
     def __init__(self, real_time):
-        
+        ## rosrun simple_robot_sim bullet.py
+        ## run above command catkin_work space
         
         self.real_time = real_time
 
@@ -27,6 +28,7 @@ class robot_sim:
 
         self.joint_publisher = rospy.Publisher('joint_state',Float64MultiArray,queue_size=1000)
         rospy.Subscriber('joint_command', Float64MultiArray, self.set_joint_positions)
+        self.reset_server = rospy.Service('reset_service',reset_sim, self.reset_handle)
         pass
 
     def set_joint_positions(self,msg):
@@ -77,6 +79,16 @@ class robot_sim:
         else:
             pybullet.setRealTimeSimulation(0)
         pass
+
+    def reset_handle(self,req):
+        rospy.loginfo("Restarting Simulation...")
+        try:
+            self.reset()
+            rospy.loginfo("Simulation Restarted")
+            return 1
+        except:
+            rospy.loginfo("Service failed")
+            return 0
 
     def close():
         pybullet.disconnect()
